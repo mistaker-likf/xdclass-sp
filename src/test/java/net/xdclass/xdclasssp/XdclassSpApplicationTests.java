@@ -18,7 +18,7 @@ class XdclassSpApplicationTests {
 	@Test
 	void testSend(){
 //		for(int i=0; i<5; i++){
-			template.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "order.new", "新订单");
+			template.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "order.new", "新订单777");
 //		}
 	}
 
