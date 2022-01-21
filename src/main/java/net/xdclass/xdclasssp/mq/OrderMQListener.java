@@ -11,7 +11,7 @@ import java.io.IOException;
 
 
 @Component
-@RabbitListener(queues = "order_queue")
+@RabbitListener(queues = "lock_merchant_dead_queue")
 public class OrderMQListener {
 
     @RabbitHandler
@@ -22,6 +22,8 @@ public class OrderMQListener {
         System.out.println("msgTag="+msgTag);
         System.out.println("mssage="+message.toString());
         System.out.println("body="+ body);
+
+        //TODO 可以在这里做业务逻辑 消费者处理消息
 
         //消息手动确认 消息被确认
         channel.basicAck(msgTag, false);
