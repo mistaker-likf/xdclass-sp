@@ -8,6 +8,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Component
@@ -19,9 +21,9 @@ public class OrderMQListener {
 
         long msgTag = message.getMessageProperties().getDeliveryTag();
 
-        System.out.println("msgTag="+msgTag);
-        System.out.println("mssage="+message.toString());
-        System.out.println("body="+ body);
+        System.out.println("msgTag=" + msgTag);
+        System.out.println("mssage=" + message.toString());
+        System.out.println("body=" + body);
 
         //TODO 可以在这里做业务逻辑 消费者处理消息
 

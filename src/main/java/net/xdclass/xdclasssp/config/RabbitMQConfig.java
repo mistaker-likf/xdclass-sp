@@ -97,7 +97,9 @@ public class RabbitMQConfig {
 
         //过期时间，单位毫秒
         args.put("x-message-ttl",10000);
+
         return QueueBuilder.durable(NEW_MERCHANT_QUEUE).withArguments(args).build();
+
     }
 
     /**
